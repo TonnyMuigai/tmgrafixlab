@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | My Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <script src="image-protect.js"></script>
+  <!-- Header -->
+<header>
+  <div class="logo-holder">
+    <img src="images/TM LOGO3.png" alt="Logo" class="logo">
+    <h1>TMGRAFIXLAB</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Scrolling Tagline outside header -->
+<div class="scrolling-tagline">
+  <span> 🎨✨ Catchy Designs for Memorable Spaces 🏡🖌️
+</span>
+</div>
+
+
+  <!-- Hero Section with Motion Background -->
+  <section class="motion-bg" id="home">
+  
+    <img src="images/Background 1.jpg" alt="Poster 1">
+    <img src="images/Background 2.jpg" alt="Poster 1">
+    <img src="images/Background5.jpg" alt="Poster 5">
+
+
+    <div class="motion-bg-content">
+      <h2>Hi, Welcome to <span>TMGRAFIXLAB</span></h2>
+      <p>A passionate graphic design company for creating <br>logos, flyers, posters,and more.</p>
+      <a href="portfolio.html"><button class="btn">View My Work</button></a>
+    </div>
+  </section>
+
+  <!-- Featured Work Section -->
+<section class="portfolio" id="featured">
+  <h3 class="typing-effect">Featured Work</h3>
+  <div class="grid">
+    <div class="card"><img src="images/Hon George-01.jpg" alt="Work 1"></div>
+    <div class="card"><img src="images/MURANGA HOCKEY DERBY copy.jpg" alt="Work 2"></div>
+    <div class="card"><img src="images/RVSD NFL Karura forest Hike.jpg" alt="Work 3"></div>
+  </div>
+  <a href="portfolio.html"><button class="btn" style="margin-top:2rem;">See Full Portfolio</button></a>
+</section>
+
+  <footer class="site-footer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <div class="footer-container">
+    <!-- Left: logo + name -->
+    <div class="logo-holder">
+      <img src="images/TM LOGO3.png" alt="Logo" class="footer-logo">
+      <p class="footer-brand">TMGRAFIXLAB</p>
+    </div>
+
+    <!-- Middle: links -->
+    <div class="footer-links">
+      <a href="https://www.instagram.com/tmgrafixlab/" class="footer-link instagram">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="mailto:tmgrafixlab@gmail.com" class="footer-link email">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <a href="https://wa.me/+254748244583" class="footer-link whatsapp" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+
+    <!-- Right: copyright -->
+    <p class="footer-copy">
+      &copy; <span id="year"></span> TMgrafixlab. All rights reserved.
+    </p>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</footer>
+
+
+
+
+
+
+</body>
+</html>
+

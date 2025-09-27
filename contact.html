@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | TMGRAFIXLAB</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="contact-page">
+  <script src="image-protect.js"></script>
+
+ <!-- Header -->
+<header>
+  <div class="logo-holder">
+    <img src="images/TM LOGO3.png" alt="Logo" class="logo">
+    <h1>TMGRAFIXLAB</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Scrolling Tagline outside header -->
+<div class="scrolling-tagline">
+  <span> 🎨✨ Catchy Designs for Memorable Spaces 🏡🖌️
+</span>
+</div>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact & Reviews</h2>
+    <p>Reach out via email or leave a public message for others to see.</p>
+
+    <!-- Social Icons Only in Body -->
+    <div class="social-links">
+      <a href="mailto:tmgrafixlab@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/+254748244583" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://instagram.com/tmgrafixlab" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/Tmgrafixlab" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <!-- Client Reviews Form -->
+    <div class="client-reviews">
+      <h3>Leave a Review</h3>
+      <form id="reviewForm">
+        <input type="text" id="reviewerName" placeholder="Your Name" required>
+        <textarea id="reviewMessage" placeholder="Write a message..." required></textarea>
+        <label for="reviewRating">Rating:</label>
+        <select id="reviewRating" required>
+          <option value="">Select rating</option>
+          <option value="1">1 ⭐</option>
+          <option value="2">2 ⭐⭐</option>
+          <option value="3">3 ⭐⭐⭐</option>
+          <option value="4">4 ⭐⭐⭐⭐</option>
+          <option value="5">5 ⭐⭐⭐⭐⭐</option>
+        </select>
+        <button type="submit">Post Review</button>
+      </form>
+
+      <div id="reviewsList"></div>
+    </div>
+  </section>
+
+  <!-- Footer (Original: Text + Icons) -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="logo-holder">
+        <img src="images/TM LOGO3.png" alt="Logo" class="footer-logo">
+        <p class="footer-brand">TMGRAFIXLAB</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://www.instagram.com/tmgrafixlab/" class="footer-link instagram">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="mailto:tmgrafixlab@gmail.com?subject=Inquiry&body=Hello, I would like to..." class="footer-link email">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+        <a href="https://wa.me/+254748244583" class="footer-link whatsapp" target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://www.facebook.com/Tmgrafixlab" class="footer-link facebook" target="_blank">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+      </div>
+
+      <p class="footer-copy">&copy; <span id="year"></span> TMGRAFIXLAB. All rights reserved.</p>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+  <!-- Review Form Script -->
+  <script>
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewsList = document.getElementById('reviewsList');
+
+    // Prevent multiple submissions
+    if (localStorage.getItem('hasReviewed')) {
+      reviewForm.innerHTML = "<p>Thank you! You have already submitted a review.</p>";
+    }
+
+    reviewForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (localStorage.getItem('hasReviewed')) {
+        alert("You have already submitted a review!");
+        return;
+      }
+
+      const name = document.getElementById('reviewerName').value.trim();
+      const message = document.getElementById('reviewMessage').value.trim();
+      const rating = document.getElementById('reviewRating').value;
+
+      if(name && message && rating) {
+        const review = document.createElement('div');
+        review.className = 'review';
+        review.innerHTML = `
+          <h4>${name} - ${'⭐'.repeat(rating)}</h4>
+          <p>${message}</p>
+        `;
+        reviewsList.prepend(review);
+        reviewForm.reset();
+        localStorage.setItem('hasReviewed', 'true');
+        reviewForm.innerHTML = "<p>Thank you! You have submitted your review.</p>";
+      }
+    });
+  </script>
+</body>
+</html>

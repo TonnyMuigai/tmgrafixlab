@@ -1,0 +1,18 @@
+# Gradle build/cache
+.gradle/
+build/
+out/
+
+# Android Studio
+*.iml
+.idea/
+
+# Flutter / Dart
+.flutter-plugins
+.packages
+pubspec.lock
+.build/
+
+# OS-specific
+.DS_Store
+Thumbs.db
